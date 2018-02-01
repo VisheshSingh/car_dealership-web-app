@@ -8,6 +8,8 @@
 </head>
 <body>
 	<%
+		// TELL THE BROWSER TO NOT HOLD ANY CACHE AND REVALIDATE AFTER EVRY LOGOUT
+		response.setHeader("Cache-Control", "no-cache, nostore, must-revalidate");
 		if(session.getAttribute("username")==null){
 			response.sendRedirect("index.jsp");
 		}

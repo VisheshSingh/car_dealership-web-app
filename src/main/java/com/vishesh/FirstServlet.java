@@ -21,7 +21,9 @@ public class FirstServlet extends HttpServlet {
 		String uname = request.getParameter("username");
 		String pwd = request.getParameter("pwd");
 
-		if (uname.equals("Ronaldo") && pwd.equals("cr7")) {
+		LoginDao LD = new LoginDao();
+
+		if (LD.checkCredentials(uname, pwd)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", uname);
 
