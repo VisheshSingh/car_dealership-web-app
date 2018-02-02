@@ -11,8 +11,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Catalog</title>
 <style>
+	body{
+			background-color:#ddd;
+			font-family:Georgia, serif;
+		}
+		
+	form {
+			font-size: 1.1em;
+		}
+		
 	.tableHead{
 		color:#fff;
+	}
+	
+	input[type="submit"]{
+		background-color: #4CAF50;
+		border: none;
+		color: white;
+		padding: 10px 20px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	
+	input[type="submit"]:hover {
+		background-color: green;
 	}
 </style>
 </head>
