@@ -28,14 +28,6 @@
 </style>
 </head>
 <body>
-	<%
-		// TELL THE BROWSER TO NOT HOLD ANY CACHE AND REVALIDATE AFTER EVRY LOGOUT
-		response.setHeader("Cache-Control", "no-cache, nostore, must-revalidate");
-		if(session.getAttribute("username")==null){
-			response.sendRedirect("index.jsp");
-		}
-		
-	%>
 	<h2>We are glad to have you!</h2>
 	<h3>Thank you for registering with us</h3>
 	You can now <a href="index.jsp">Login</a> here.
