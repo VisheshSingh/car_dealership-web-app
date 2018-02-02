@@ -43,11 +43,9 @@
 		%>
 	<h3>Here's a list of all the cars we have in the inventory...</h3>
 	<br/>
-	<table align="center" cellpadding="5" cellspacing="5" border="1">
-	<tr>
+	<table align="center" cellpadding="2" cellspacing="5" border="2">
 	
-	</tr>
-	<tr bgcolor="606060" class="tableHead">
+	<tr bgcolor="#606060" class="tableHead">
 	<td><b>ModelNumber</b></td>
 	<td><b>YearofProduction</b></td>
 	<td><b>DownPayment</b></td>
