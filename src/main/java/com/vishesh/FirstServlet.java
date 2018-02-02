@@ -8,54 +8,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 public class FirstServlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-
-	}
+	// ADDING A LOGGER FOR CAPTURING LOGGIN INFORMATION
+	final static Logger logger = Logger.getLogger(FirstServlet.class);
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		logger.debug("Checking Login credentials...");
 		String uname = request.getParameter("username");
 		String pwd = request.getParameter("pwd");
 
 		LoginDao LD = new LoginDao();
 
 		if (LD.checkCredentials(uname, pwd)) {
+			logger.info("Welcome " + uname + ", your details were successfully verified");
 			HttpSession session = request.getSession();
 			session.setAttribute("username", uname);
 
 			response.sendRedirect("welcome.jsp");
 		} else {
-			response.sendRedirect("index.jsp");
+			logger.info("Logging failed ");
+			response.sendRedirect("failure.jsp");
 		}
-		// Properties props = new Properties();
-		// props.load(FirstServlet.class.getClassLoader().getResourceAsStream("db.properties"));
-
-		// String url = props.getProperty("jdbc.url");
-		// String username = props.getProperty("jdbc.username");
-		// String password = props.getProperty("jdbc.password");
-		// try {
-		// // 1. Get a connection to database
-		// Connection myConn = DriverManager.getConnection(url, username, password);
-		//
-		// // 2. Create a statement
-		// Statement myStmt = myConn.createStatement();
-		//
-		// // 3. Execute SQL query
-		// ResultSet myRS = myStmt.executeQuery("Select * from customer");
-		//
-		// // 4. Process the result set
-		// while (myRS.next()) {
-		// System.out.println(myRS.getString("C_FirstName") + ", " +
-		// myRS.getString("C_LastName"));
-		// }
-		// } catch (Exception ex) {
-		// ex.printStackTrace();
-		// }
-		doGet(request, response);
 	}
 
 }
