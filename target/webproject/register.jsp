@@ -38,11 +38,11 @@
 <body>
 	<h3>Enter the following details to complete registration:</h3>
 	<form action="Registration" method="POST">
-		<input type="text" name="username" placeholder="Enter username" required="required"><br/><br/>
+		<input type="text" name="username" placeholder="Enter username"><br/><br/>
 		<input type="email" name="email" placeholder="Enter email"><br/><br/>
 		<input type="text" name="phone" placeholder="Phone number"><br/><br/>
-		<input type="password" name="pwd" placeholder="Password" required="required"><br/><br/>
-		<input type="password" name="confpwd" placeholder="Confirm password" required="required"><br/><br/>
+		<input type="password" name="pwd" placeholder="Password"><br/><br/>
+		<input type="password" name="confpwd" placeholder="Confirm password"><br/><br/>
 		<input type="submit" value="Submit" />
 	</form>
 </body>

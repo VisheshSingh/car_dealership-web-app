@@ -5,11 +5,9 @@
 		body{
 			background-color:#ddd;
 			font-family:Georgia, serif;
-		}
-		
-		form {
 			font-size: 1.1em;
 		}
+		
 		input {
 			padding:5px;
 		}
@@ -21,6 +19,7 @@
 		    background-color: #4CAF50;
 		    border: none;
 		    color: white;
+		    font-family:Georgia, serif;
 		    padding: 10px 20px;
 		    text-decoration: none;
 		    margin: 4px 2px;
@@ -29,6 +28,20 @@
 		
 		input[type=submit]:hover{
 			background-color: green;
+		}
+		
+		a {
+			text-decoration:none;
+			padding: 10px 20px;
+			font-size:0.8em;
+			margin: 4px 2px;
+			color: white;
+			border: none;
+			background-color: #0080ff;
+		}
+		
+		a:hover{
+			background-color: #006bb3;
 		}
 		
 		
@@ -41,6 +54,7 @@
 		<input type="text" name="username" placeholder="Enter username"/><br/><br/>
 		<input type="password" name="pwd" placeholder="Enter password"/><br/><br/>
 		<input type="submit" value="Login" />
+		<a href="register.jsp">Register</a>
 	</form>
 
 </body>

@@ -4,30 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login Successful</title>
+<title>Registered!</title>
 <style>
-	body{
-			background-color:#ddd;
-			font-family:Georgia, serif;
+		body{
+				background-color:#ddd;
+				font-family:Georgia, serif;
+				font-size: 1.1em;
+			}
+			
+		a {
+			text-decoration:none;
+			padding: 10px 20px;
+			font-size:0.8em;
+			margin: 4px 2px;
+			color: white;
+			border: none;
+			background-color: #0080ff;
 		}
 		
-	form {
-			font-size: 1.1em;
+		a:hover{
+			background-color: #006bb3;
 		}
-		
-	a{
-		background-color: #4CAF50;
-		border: none;
-		color: white;
-		padding: 10px 20px;
-		text-decoration: none;
-		margin: 4px 2px;
-		cursor: pointer;
-	}
-	
-	a:hover{
-		background-color:green;
-	}
 </style>
 </head>
 <body>
@@ -39,9 +36,8 @@
 		}
 		
 	%>
-	 
-	 <h2>Hi, <%= session.getAttribute("username") %></h2>
-	<h3>You've successfully logged in...</h3>
-	<a href="Catalog.jsp">Visit Catalog</a>
+	<h2>We are glad to have you!</h2>
+	<h3>Thank you for registering with us</h3>
+	You can now <a href="index.jsp">Login</a> here.
 </body>
 </html>

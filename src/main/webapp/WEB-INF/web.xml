@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.vishesh.Logout</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Registration</servlet-name>
+  	<display-name>Registration</display-name>
+  	<description></description>
+  	<servlet-class>com.vishesh.Registration</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>FirstServlet</servlet-name>
   	<url-pattern>/FirstServlet</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>Logout</servlet-name>
   	<url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Registration</servlet-name>
+  	<url-pattern>/Registration</url-pattern>
   </servlet-mapping>
 </web-app>
