@@ -1,4 +1,8 @@
-<%@page import="com.mysql.jdbc.Connection"%>
+
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,6 +10,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Catalog</title>
+<style>
+	body{
+			background-color:#ddd;
+			font-family:Georgia, serif;
+		}
+		
+	form {
+			font-size: 1.1em;
+		}
+		
+	.tableHead{
+		color:#fff;
+	}
+	
+	input[type="submit"]{
+		background-color: #4CAF50;
+		border: none;
+		color: white;
+		padding: 10px 20px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	
+	input[type="submit"]:hover {
+		background-color: green;
+	}
+</style>
 </head>
 <body>
 	<%
@@ -15,9 +47,61 @@
 			response.sendRedirect("index.jsp");
 		}
 	%>
-	
+	<%
+		String id = request.getParameter("userId");
+		String driverName = "com.mysql.jdbc.Driver";
+		String connectionUrl = "jdbc:mysql://localhost:3306/car_dealership";
+		String userId = "root";
+		String password = "admin";
+		
+		try {
+			Class.forName(driverName);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+			Connection connection = null;
+			Statement statement = null;
+			ResultSet resultSet = null;
+		%>
 	<h3>Here's a list of all the cars we have in the inventory...</h3>
 	<br/>
+	<table align="center" cellpadding="2" cellspacing="5" border="2">
+	
+	<tr bgcolor="#606060" class="tableHead">
+	<td><b>ModelNumber</b></td>
+	<td><b>YearofProduction</b></td>
+	<td><b>DownPayment</b></td>
+	<td><b>MonthlyPayment</b></td>
+	<td><b>Duration_in_months</b></td>
+	</tr>
+	<%
+		try{ 
+		connection = DriverManager.getConnection(connectionUrl, userId, password);
+		statement=connection.createStatement();
+		String sql ="SELECT * FROM model";
+		
+		resultSet = statement.executeQuery(sql);
+		while(resultSet.next()){
+	%>
+		<tr bgcolor="#C0C0C0">
+		
+			<td><%=resultSet.getString("ModelNumber") %></td>
+			<td><%=resultSet.getString("YearofProduction") %></td>
+			<td><%=resultSet.getString("DownPayment") %></td>
+			<td><%=resultSet.getString("MonthlyPayment") %></td>
+			<td><%=resultSet.getString("Duration_in_months") %></td>
+		
+		</tr>
+	<% 
+		}
+	
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	%>
+	</table>
+	<br/><br/>
 	
 	<form action="Logout" method="POST">
 		<input type="submit" value="Logout"/>

@@ -37,8 +37,10 @@
 		if(session.getAttribute("username")==null){
 			response.sendRedirect("index.jsp");
 		}
+		
 	%>
 	 
+	 <h2>Hi, <%= session.getAttribute("username") %></h2>
 	<h3>You've successfully logged in...</h3>
 	<a href="Catalog.jsp">Visit Catalog</a>
 </body>
