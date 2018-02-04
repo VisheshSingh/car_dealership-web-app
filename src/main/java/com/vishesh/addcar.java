@@ -58,6 +58,7 @@ public class addcar extends HttpServlet {
 
 			// 4. Process the result set
 			logger.info("1 Record inserted.");
+			response.sendRedirect("caradded.jsp");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

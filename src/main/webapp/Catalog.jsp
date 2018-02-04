@@ -46,6 +46,7 @@
 		if(session.getAttribute("username")==null){
 			response.sendRedirect("index.jsp");
 		}
+		
 	%>
 	<%
 		String id = request.getParameter("userId");

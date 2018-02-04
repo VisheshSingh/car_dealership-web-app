@@ -32,9 +32,33 @@
 	input[type=submit]:hover{
 			background-color: green;
 		}
+		
+		a {
+			text-decoration:none;
+			padding: 10px 20px;
+			font-size:0.8em;
+			margin: 4px 2px;
+			color: white;
+			border: none;
+			background-color: #0080ff;
+		}
+		
+		a:hover{
+			background-color: #006bb3;
+		}
 </style>
 </head>
 <body>
+	<%
+		// TELL THE BROWSER TO NOT HOLD ANY CACHE AND REVALIDATE AFTER EVRY LOGOUT
+		response.setHeader("Cache-Control", "no-cache, nostore, must-revalidate");
+		if(session.getAttribute("username")==null){
+			response.sendRedirect("index.jsp");
+		}
+		
+	%>
+	<br>
+	<a href="Catalog.jsp">View Inventory</a>
 	<h3>Add Car</h3>
 	<form action="addcar" method="POST">
 		<input type="text" name="model" placeholder="Model Number" />&nbsp;&nbsp;
