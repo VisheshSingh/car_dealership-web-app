@@ -22,6 +22,18 @@
   	<description></description>
   	<servlet-class>com.vishesh.Registration</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>admin</servlet-name>
+  	<display-name>admin</display-name>
+  	<description></description>
+  	<servlet-class>com.vishesh.admin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>addcar</servlet-name>
+  	<display-name>addcar</display-name>
+  	<description></description>
+  	<servlet-class>com.vishesh.addcar</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>FirstServlet</servlet-name>
   	<url-pattern>/FirstServlet</url-pattern>
@@ -33,5 +45,13 @@
   <servlet-mapping>
   	<servlet-name>Registration</servlet-name>
   	<url-pattern>/Registration</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>admin</servlet-name>
+  	<url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>addcar</servlet-name>
+  	<url-pattern>/addcar</url-pattern>
   </servlet-mapping>
 </web-app>

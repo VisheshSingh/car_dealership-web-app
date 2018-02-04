@@ -7,19 +7,19 @@ import java.sql.ResultSet;
 
 import org.apache.log4j.Logger;
 
-public class LoginDao {
+public class AdminDao {
 	String url = "jdbc:mysql://localhost:3306/car_dealership";
 	String uname = "root";
 	String pass = "admin";
-	String sql = "Select * from login_details where username=? and password=?";
+	String sql = "Select * from admin where username=? and password=?";
 
 	// ADDING A LOGGER FOR CAPTURING LOGGIN INFORMATION
-	final static Logger logger = Logger.getLogger(LoginDao.class);
+	final static Logger logger = Logger.getLogger(AdminDao.class);
 
 	public boolean checkCredentials(String username, String password) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			logger.debug("Checking your credentials in our database...");
+			logger.debug("Checking admin credentials in our database...");
 			// 1. Get a connection to database
 			Connection myConn = DriverManager.getConnection(url, uname, pass);
 
@@ -39,5 +39,4 @@ public class LoginDao {
 		}
 		return false;
 	}
-
 }

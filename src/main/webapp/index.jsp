@@ -44,6 +44,14 @@
 			background-color: #006bb3;
 		}
 		
+		.admin {
+			background-color: #e60000;
+			padding:10px 46px;
+		}
+		
+		.admin:hover{
+			background-color: #ff3333;
+		}
 		
 	</style>
 </head>
@@ -54,7 +62,8 @@
 		<input type="text" name="username" placeholder="Enter username"/><br/><br/>
 		<input type="password" name="pwd" placeholder="Enter password"/><br/><br/>
 		<input type="submit" value="Login" />
-		<a href="register.jsp">Register</a>
+		<a href="register.jsp">Register</a><br/><br/>
+		<a href="admin.jsp" class="admin">Admin Login</a>
 	</form>
 
 </body>
