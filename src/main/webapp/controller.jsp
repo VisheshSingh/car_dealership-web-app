@@ -46,6 +46,15 @@
 		a:hover{
 			background-color: #006bb3;
 		}
+		
+		#delete{
+			background-color: #e60000;
+		}
+		
+		#delete:hover{
+			background-color: #ff3333;
+		}
+		
 </style>
 </head>
 <body>
@@ -70,5 +79,11 @@
 		<input type="submit" value="Add to inventory"/>
 	</form>
 	<h3>Delete Car</h3>
+	<form action="deletecar" method="POST">
+		<input type="text" name="model" placeholder="Model Number" />&nbsp;&nbsp;
+		<input type="text" name="makeid" placeholder="Enter # [201 - 206]" />&nbsp;&nbsp;
+		<input type="text" name="year" placeholder="Year of production" /><br/><br/>
+		<input id="delete" type="submit" value="Delete from inventory"/>
+	</form>
 </body>
 </html>

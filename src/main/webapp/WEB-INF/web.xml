@@ -34,6 +34,12 @@
   	<description></description>
   	<servlet-class>com.vishesh.addcar</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>deletecar</servlet-name>
+  	<display-name>deletecar</display-name>
+  	<description></description>
+  	<servlet-class>com.vishesh.deletecar</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>FirstServlet</servlet-name>
   	<url-pattern>/FirstServlet</url-pattern>
@@ -53,5 +59,9 @@
   <servlet-mapping>
   	<servlet-name>addcar</servlet-name>
   	<url-pattern>/addcar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deletecar</servlet-name>
+  	<url-pattern>/deletecar</url-pattern>
   </servlet-mapping>
 </web-app>

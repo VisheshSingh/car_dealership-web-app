@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Success! Car added</title>
+<title>Success! Car deleted.</title>
 <style>
 	body{
 			background-color:#ddd;
@@ -27,9 +27,8 @@
 		}
 </style>
 </head>
-
 <body>
-	<h2>Inventory updated with a new car</h2>
+	<h2>Inventory updated after deleting a car</h2>
 	<a href="Catalog.jsp">View Inventory</a>
 	<a href="controller.jsp">Go back</a>
 </body>
